@@ -30,6 +30,36 @@
     }
   }
 
+
+
+
+@media screen and (max-width: 576px) {
+  .tax-toggle {
+    padding: 2px !important;
+    height: auto;
+    font-size: 0.85rem !important;
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  .tax-toggle .form-check-input {
+    transform: scale(0.75);
+    margin-right: 0.1rem;
+  }
+
+  .mini-toggle{
+    margin-left: 5px !important;
+  }
+
+  .tax-toggle .form-check-label {
+    font-size: 0.85rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+
   .tax-info{
     display: none;
   }
@@ -92,7 +122,7 @@
 
 
   <div class="tax-toggle">
-<div class="form-check-reverse form-switch">
+<div class="form-check-reverse form-switch mini-toggle">
 <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
 <label class="form-check-label" for="flexSwitchCheckDefault">Display Total After Taxes</label>
 </div>
