@@ -17,6 +17,7 @@ const ExpressError=require("./utils/ExpressError.js");
 const passport=require("passport");
 const LocalStrategy=require("passport-local");
 const User=require("./models/user.js")
+const Listing=require("./models/listing.js");
 
 // app.get("/demouser",async(req,res)=>{
 //   let fakeUser=new User({
@@ -106,7 +107,10 @@ app.use("/listings",listingRouter);
 app.use("/listings/:id/reviews",reviewRouter);
 app.use("/",userRouter);
 
-
+app.get("/",async(req,res)=>{
+  let alllist=await Listing.find({});
+res.render("./listings/index.ejs",{alllist});
+});
 
 app.all(/.*/,(req,res,next)=>{
 next(new ExpressError(404,"page not found"));
